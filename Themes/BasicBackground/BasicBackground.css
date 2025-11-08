@@ -12,6 +12,8 @@
 	--chatinputtransparency:		0.0;
 	--memberlisttransparency:		0.0;
 	--accentcolor:				190, 78, 180;
+	--transparentblur			0;
+	--transparentblur_v:			calc(1px * var(--backgroundblur_s, var(--transparentblur)));
 	
 	--settingsicons:			1;
 	--font:					"gg sans", "Noto Sans";
@@ -469,6 +471,9 @@ body,											/* body													*/
 #app-mount .image__61a6b {								/* app					errorscreen image						*/
 	background-image: url(https://discord.com/assets/72eaa596042042be6259.svg);
 	opacity: 0.6;
+}
+body:has(#app-mount)::after {
+	backdrop-filter: blur(var(--transparentblur));
 }
 
 
